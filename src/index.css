@@ -166,3 +166,23 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-light-grey dark:bg-dark-grey rounded-xl;
 }
+
+
+/* Your existing CSS code */
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Modify styles for screens with a maximum width of 768px */
+
+
+  /* Add more responsive styles here */
+}
+
+@media (max-width: 640px) {
+  /* Modify styles for screens with a maximum width of 640px */
+
+
+  /* Add more responsive styles here */
+}
+
+/* Add more media queries and responsive styles as needed */
