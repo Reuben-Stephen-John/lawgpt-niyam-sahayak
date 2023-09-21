@@ -1,28 +1,183 @@
-const HomePage = () => {
+
+import indiaLawImage from "../assets/indiawlaw.jpg";
+import React from "react"; 
+
+
+
+function HomePage() {
+  const containerStyle = {
+    backgroundImage: `url(${indiaLawImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    position: "relative",
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  };
+
+  const overlayStyle = {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
+  };
+
+  const cardsContainerStyle = {
+    display: "flex",
+    flexDirection: "row", // Display cards side by side
+    justifyContent: "center", // Center-align the cards horizontally
+    gap: "10rem", // Adjust the gap between the cards
+    position: "absolute",
+    bottom: "5rem", // Position the cards at the bottom with some margin
+  };
+
+  const cardStyle = {
+    flex: "1",
+    width: "400px", // Set a fixed width for all cards
+    height: "200px", // Set a fixed height for all cards 
+    opacity: 0.6,
+  };
+
+  const headerStyle = {
+    marginBottom: "20rem", 
+    fontSize: "4rem", 
+    fontFamily: "'Times New Roman', serif",  
+    opacity: 0.8, 
+  };
+  
+  const buttonStyle = {
+    marginTop: "2rem", // Adjust the margin-top to push the button down
+    padding: "1rem 2rem", // Increase button size by adding padding
+    
+  };
+
   return (
-    <>
-    <section class="bg-white dark:bg-gray-900">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-        <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Payments tool for software companies</h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
-            <a href="#" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                Speak to Sales
-            </a> 
+    <div style={containerStyle}>
+      <div style={overlayStyle}></div>
+      <div className="h-screen flex items-center  flex-col justify-center relative">
+        <div className="text-gray-100 text-4xl font-semibold text-center" style={headerStyle}>
+          NIYAM SAHAYAK
+          <div style={buttonStyle}>
+          <button type="button" class="text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-5">
+            Get Started!
+          </button> 
+          <blockquote style={{ 
+    fontSize: '1.5rem',
+    fontStyle: 'italic',
+    fontWeight: 'bold',
+    color: 'light-yellow',
+    //paddingLeft: '1rem',
+    maxWidth: '600px',
+    marginBottom: '-1rem', // Add margin only at the bottom,
+}}>
+    <p style={{ fontSize: '2rem' }}>
+        "cool law quote or description of why we are doing this"
+    </p>
+</blockquote>
+
+          </div>
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup"/>
-        </div>                
+      
+
+        <div style={cardsContainerStyle}>
+          {/* Card 1 */}
+          <div
+            class="max-w-sm p-6 bg-gray-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style={cardStyle}
+          >
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                FACT-CHECK
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Description for Card 1 goes here.
+            </p>
+            <a
+              href="/search"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-800 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Try now
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+
+          {/* Card 2 */}
+          <div
+            class="max-w-sm p-6 bg-gray-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style={cardStyle}
+          >
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                SEGMENTATION
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Description for Card 2 goes here.
+            </p>
+            <a
+              href="/search"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-800 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Try now
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+
+          {/* Card 3 */}
+          <div
+            class="max-w-sm p-6 bg-gray-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            style={cardStyle}
+          >
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                JUDGEMENT
+              </h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              Description for Card 3 goes here.
+            </p>
+            <a
+              href="/search"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-800 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Try now
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
-    </>
   );
-};
-
+}
 
 export default HomePage;
