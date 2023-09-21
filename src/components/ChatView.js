@@ -57,10 +57,6 @@ const ChatView = () => {
     e.preventDefault();
 
     const key = window.localStorage.getItem('api-key');
-    if (!key) {
-      setModalOpen(true);
-      return;
-    }
 
     const filter = new Filter();
     const cleanPrompt = filter.isProfane(formValue)
