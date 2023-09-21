@@ -14,6 +14,9 @@
   "dependencies": {
     "bad-words": "^3.0.4",
     "daisyui": "^2.51.6",
+    "flowbite": "^1.8.1",
+    "flowbite-react": "^0.6.0",
+    "lottie-react": "^2.4.0",
     "moment": "^2.29.4",
     "openai": "^3.2.1",
     "react": "^18.2.0",
@@ -21,6 +24,7 @@
     "react-ga4": "^2.1.0",
     "react-icons": "^4.7.1",
     "react-markdown": "^8.0.4",
+    "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1"

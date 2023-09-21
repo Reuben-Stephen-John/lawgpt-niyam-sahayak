@@ -1,27 +1,18 @@
-import { ChatContextProvider } from './context/chatContext';
-import SideBar from './components/SideBar';
-import ChatView from './components/ChatView';
-import { useEffect, useState } from 'react';
-import Modal from './components/Modal';
-import Setting from './components/Setting';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Gpt from './pages/gpt';
+import FourOFour from './pages/404.pages';
+import HomePage from './pages/home';
 
 const App = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  useEffect(() => {
-    const apiKey = window.localStorage.getItem('api-key');
-      setModalOpen(false);
-  }, []);
   return (
-    <ChatContextProvider>
-      <Modal title='Setting' modalOpen={modalOpen} setModalOpen={setModalOpen}>
-        <Setting modalOpen={modalOpen} setModalOpen={setModalOpen} />
-      </Modal>
-      <div className='flex transition duration-500 ease-in-out'>
-        <SideBar />
-        <ChatView />
-      </div>
-    </ChatContextProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<Gpt />} />
+        <Route path="*" element={<FourOFour />} />
+      </Routes>
+    </Router>
   );
 };
 
