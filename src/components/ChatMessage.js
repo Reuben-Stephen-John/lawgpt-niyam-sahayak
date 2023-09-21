@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm';
 import moment from 'moment';
 import Image from './Image';
 import person from '../assets/person.png';
+import computer from '../assets/computer.webp';
 
 /**
  * A chat message component that displays a message with a timestamp and an icon.
@@ -59,7 +60,7 @@ const ChatMessage = (props) => {
         {ai ? (
           <div className='avatar'>
             <div className='w-8 border rounded-full'>
-              <MdComputer className='w-6 h-full mx-auto' />
+              <img src={computer} alt='profile pic' />
             </div>
           </div>
         ) : (

@@ -8,7 +8,7 @@ import {
 } from 'react-icons/md';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { ChatContext } from '../context/chatContext';
-import bot from '../assets/bot.ico';
+import bot from '../assets/law.ico';
 import DarkMode from './DarkMode';
 import Modal from './Modal';
 import Setting from './Setting';
@@ -38,12 +38,12 @@ const SideBar = () => {
     <section className={` ${open ? 'w-64' : 'w-16'} sidebar`}>
       <div className='sidebar__app-bar'>
         <div className={`sidebar__app-logo ${!open && 'scale-0 hidden'}`}>
-          <span className='w-8 h-8'>
-            <img src={bot} alt='' />
+          <span className='w-2 h-2'>
+            <img src={bot} alt='' style={{ width: '40px', height: '40px' }}/>
           </span>
         </div>
         <h1 className={`sidebar__app-title ${!open && 'scale-0 hidden'}`}>
-          ChatGPT
+          Niyam Shahayak
         </h1>
         <div className={`sidebar__btn-close`} onClick={() => setOpen(!open)}>
           {open ? (
@@ -68,10 +68,10 @@ const SideBar = () => {
         <DarkMode open={open} />
         <div onClick={() => setModalOpen(true)} className='nav'>
           <span htmlFor='setting-modal' className='nav__item'>
-            <div className='nav__icons'>
+            {/* <div className='nav__icons'>
               <MdOutlineVpnKey />
             </div>
-            <h1 className={`${!open && 'hidden'}`}>OpenAI Key</h1>
+            <h1 className={`${!open && 'hidden'}`}>OpenAI Key</h1> */}
           </span>
         </div>
       </div>

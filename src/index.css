@@ -22,7 +22,7 @@
   }
 
   .sidebar__app-title {
-    @apply text-white font-medium text-xl duration-300;
+    @apply text-white font-medium text-base duration-300;
   }
 
   .sidebar__btn-close {

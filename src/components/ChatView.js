@@ -17,7 +17,7 @@ const ChatView = () => {
   const inputRef = useRef();
   const [formValue, setFormValue] = useState('');
   const [thinking, setThinking] = useState(false);
-  const options = ['ChatGPT', 'DALL·E'];
+  const options = ['FACT-CHECK', 'SEGMENTING','JUDGEMENT'];
   const [selected, setSelected] = useState(options[0]);
   const [messages, addMessage] = useContext(ChatContext);
   const [modalOpen, setModalOpen] = useState(false);
@@ -86,7 +86,9 @@ const ChatView = () => {
         data && updateMessage(data, true, aiModel);
       }
     } catch (err) {
-      window.alert(`Error: ${err} please try again later`);
+      const data="Connect thine hugging face lawgpt model to get better responses than this --Reuben";
+      updateMessage(data, true, aiModel);
+      // window.alert(`Error: ${err} please try again later`);
     }
 
     setThinking(false);
@@ -131,6 +133,7 @@ const ChatView = () => {
           className='dropdown'>
           <option>{options[0]}</option>
           <option>{options[1]}</option>
+          <option>{options[2]}</option>
         </select>
         <div className='flex items-stretch justify-between w-full'>
           <textarea
