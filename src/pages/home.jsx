@@ -91,7 +91,7 @@ function HomePage() {
     marginTop:'2rem'// Add margin only at the bottom,
 }}>
     <p style={{ fontSize: '2rem' }}>
-        "cool law quote or description of why we are doing this"
+        "Your Legal Ally!, Expert Guidance, Just a Chat Away"
     </p>
 </blockquote>
 
@@ -137,11 +137,11 @@ function HomePage() {
           >
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                SEGMENTATION
+                COMPLETION
               </h5>
             </a>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Segmenting the document into 7 semantic segments
+              Fills in missing details with accurate legal terms
             </p>
             <a
               href="/search"
