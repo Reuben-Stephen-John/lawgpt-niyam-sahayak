@@ -73,17 +73,22 @@ function HomePage() {
         <div className="text-gray-100 text-4xl font-semibold text-center" style={headerStyle}>
           NIYAM SAHAYAK
           <div style={buttonStyle}>
-          <button type="button" class="text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-5">
-            Get Started!
-          </button> 
-          <blockquote style={{ 
+          <a
+  href="/search"
+  class="text-white bg-gradient-to-r from-gray-500 via-gray-600 to-gray-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5 mb-2"
+> 
+  Get Started!
+</a>
+
+  <blockquote style={{ 
     fontSize: '1.5rem',
     fontStyle: 'italic',
     fontWeight: 'bold',
     color: 'light-yellow',
     //paddingLeft: '1rem',
     maxWidth: '600px',
-    marginBottom: '-1rem', // Add margin only at the bottom,
+    marginBottom: '-1rem',  
+    marginTop:'2rem'// Add margin only at the bottom,
 }}>
     <p style={{ fontSize: '2rem' }}>
         "cool law quote or description of why we are doing this"
