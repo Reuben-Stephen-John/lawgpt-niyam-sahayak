@@ -1,6 +1,7 @@
 
 import indiaLawImage from "../assets/indiawlaw.jpg";
 import React from "react"; 
+import './home.css'; // Import the CSS file
 
 
 
@@ -38,9 +39,18 @@ function HomePage() {
 
   const cardStyle = {
     flex: "1",
-    width: "400px", // Set a fixed width for all cards
-    height: "200px", // Set a fixed height for all cards 
+    width: "20rem", // Set a fixed width for all cards
+    height: "20rem", // Set a fixed height for all cards 
     opacity: 0.6,
+  }; 
+
+  const mediaQueryStyle = {
+    "@media (max-width: 768px)": {
+      width: "100%", // When screen width is 768px or less, set card width to 100%
+    },
+    "@media (min-width: 769px)": {
+      width: "400px", // When screen width is 769px or more, set card width to 400px
+    },
   };
 
   const headerStyle = {
@@ -96,7 +106,7 @@ function HomePage() {
               </h5>
             </a>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Description for Card 1 goes here.
+              Identification of relevant articles based on facts
             </p>
             <a
               href="/search"
@@ -126,7 +136,7 @@ function HomePage() {
               </h5>
             </a>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Description for Card 2 goes here.
+              Segmenting the document into 7 semantic segments
             </p>
             <a
               href="/search"
@@ -156,7 +166,7 @@ function HomePage() {
               </h5>
             </a>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Description for Card 3 goes here.
+              Predicting if claims/petitions will be accepted/rejected
             </p>
             <a
               href="/search"
