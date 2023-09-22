@@ -4,8 +4,9 @@ import { ChatContext } from '../context/chatContext';
 import Thinking from './Thinking';
 import { MdSend } from 'react-icons/md';
 import Filter from 'bad-words';
-import { davinci } from '../utils/davinci';
-import { dalle } from '../utils/dalle';
+// import { davinci } from '../utils/davinci';
+// import { dalle } from '../utils/dalle';
+import lawgpt from '../utils/lawgpt';
 import Modal from './Modal';
 import Setting from './Setting';
 
@@ -72,19 +73,13 @@ const ChatView = () => {
 
     console.log(selected);
     try {
-      if (aiModel === options[0]) {
-        const response = await davinci(cleanPrompt, key);
-        const data = response.data.choices[0].message.content;
-        data && updateMessage(data, true, aiModel);
-      } else {
-        const response = await dalle(cleanPrompt, key);
-        const data = response.data.data[0].url;
-        data && updateMessage(data, true, aiModel);
-      }
+      const response= await lawgpt(cleanPrompt);
+      const data= response.response ;
+      data && updateMessage(data,true,aiModel);
     } catch (err) {
-      const data="Connect thine hugging face lawgpt model to get better responses than this --Reuben";
-      updateMessage(data, true, aiModel);
-      // window.alert(`Error: ${err} please try again later`);
+      // const data="Connect thine hugging face lawgpt model to get better responses than this --Reuben";
+      // updateMessage(data, true, aiModel);
+      window.alert(`Error: ${err} please try again later`);
     }
     setThinking(false);
   };
@@ -99,9 +94,6 @@ const ChatView = () => {
       }
     }
   };
-  
-  
-
   /**
    * Scrolls the chat area to the bottom when the messages array is updated.
    */
