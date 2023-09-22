@@ -98,7 +98,7 @@
 /* Your CSS classes */
 .chatview__textarea-message {
   @apply bg-light-white ml-0 sm:ml-2 dark:bg-light-grey text-xl sm:w-full grow min-h-[4rem] max-h-[20px] p-2 
-  border-2 border-slate-400 dark:border-slate-500 mx-2 overflow-y-hidden
+  border-2 border-slate-400 dark:border-slate-500 mx-2 overflow-y-auto
   focus:ring-offset-indigo-200 focus:ring-2 focus:ring-offset-2
   resize-y rounded-xl;
 }

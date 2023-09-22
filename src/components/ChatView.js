@@ -66,8 +66,8 @@ const ChatView = () => {
     const newMsg = cleanPrompt;
     const aiModel = selected;
 
-    setThinking(true);
     setFormValue('');
+    setThinking(true);
     updateMessage(newMsg, false, aiModel);
 
     console.log(selected);
@@ -86,16 +86,21 @@ const ChatView = () => {
       updateMessage(data, true, aiModel);
       // window.alert(`Error: ${err} please try again later`);
     }
-
     setThinking(false);
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      // 👇 Get input value
-      sendMessage(e);
+    if (e.key === 'Enter' && !e.shiftKey) {
+      // Prevent the default Enter key behavior (submitting the form)
+      e.preventDefault();
+  
+      if (formValue.trim() !== '') {
+        sendMessage(e);
+      }
     }
   };
+  
+  
 
   /**
    * Scrolls the chat area to the bottom when the messages array is updated.
@@ -111,13 +116,6 @@ const ChatView = () => {
     inputRef.current.focus();
   }, []);
 
-  const handleTextAreaChange = (e) => {
-    const textarea = e.target;
-    textarea.style.height = 'auto'; // Reset the height to auto
-    textarea.style.height = `${textarea.scrollHeight}px`; // Set the height to match the content
-    setFormValue(textarea.value); // Update the state with the new content
-  };
-  
   return (
     <div className='chatview'>
       <main className='chatview__chatarea'>
@@ -139,15 +137,14 @@ const ChatView = () => {
           <option>{options[2]}</option>
         </select> */}
         <div className='flex items-stretch justify-between w-full'>
-        <textarea
-          ref={inputRef}
-          className='chatview__textarea-message textarea-auto-resize'
-          value={formValue}
-          onKeyDown={handleKeyDown}
-          placeholder="Enter your prompt here..."
-          onChange={handleTextAreaChange} // Add this event handler
-          rows={1} // Set the initial number of rows (adjust as needed)
-        />
+          <textarea
+            ref={inputRef}
+            className='chatview__textarea-message'
+            value={formValue}
+            onKeyDown={handleKeyDown}
+            placeholder="Enter your prompt here..."
+            onChange={(e) => setFormValue(e.target.value)}
+          />
           <button
             type='submit'
             className='chatview__btn-send'
