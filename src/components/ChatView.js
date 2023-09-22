@@ -111,6 +111,13 @@ const ChatView = () => {
     inputRef.current.focus();
   }, []);
 
+  const handleTextAreaChange = (e) => {
+    const textarea = e.target;
+    textarea.style.height = 'auto'; // Reset the height to auto
+    textarea.style.height = `${textarea.scrollHeight}px`; // Set the height to match the content
+    setFormValue(textarea.value); // Update the state with the new content
+  };
+  
   return (
     <div className='chatview'>
       <main className='chatview__chatarea'>
@@ -123,22 +130,24 @@ const ChatView = () => {
         <span ref={messagesEndRef}></span>
       </main>
       <form className='form' onSubmit={sendMessage}>
-        <select
+        {/* <select
           value={selected}
           onChange={(e) => setSelected(e.target.value)}
           className='dropdown'>
           <option>{options[0]}</option>
           <option>{options[1]}</option>
           <option>{options[2]}</option>
-        </select>
+        </select> */}
         <div className='flex items-stretch justify-between w-full'>
-          <textarea
-            ref={inputRef}
-            className='chatview__textarea-message'
-            value={formValue}
-            onKeyDown={handleKeyDown}
-            onChange={(e) => setFormValue(e.target.value)}
-          />
+        <textarea
+          ref={inputRef}
+          className='chatview__textarea-message textarea-auto-resize'
+          value={formValue}
+          onKeyDown={handleKeyDown}
+          placeholder="Enter your prompt here..."
+          onChange={handleTextAreaChange} // Add this event handler
+          rows={1} // Set the initial number of rows (adjust as needed)
+        />
           <button
             type='submit'
             className='chatview__btn-send'
