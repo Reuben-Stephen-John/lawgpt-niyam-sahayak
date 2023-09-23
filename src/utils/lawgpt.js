@@ -1,6 +1,6 @@
 const lawgpt = async (prompt) => {
     try {
-      const url = 'http://127.0.0.1:5000//prompt';
+      const url = 'http://127.0.0.1:5000/prompt';
   
       const response = await fetch(url, {
         method: 'POST',
