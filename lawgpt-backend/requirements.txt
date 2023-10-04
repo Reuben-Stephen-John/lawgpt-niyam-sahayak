@@ -1,0 +1,6 @@
+torch
+transformers
+pipeline
+Flask
+Flask-CORS
+gunicorn
