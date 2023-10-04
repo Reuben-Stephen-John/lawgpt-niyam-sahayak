@@ -1,6 +1,7 @@
 # Niyamshayak - LawGPT Frontend
 
-![Project Logo](placeholder_logo.png)
+![image](https://github.com/Reuben-Stephen-John/lawgpt-frontend/assets/91174896/fdec5970-bc2b-483f-ae6a-90d6ef67b5c2)
+
 
 Niyamshayak is a web-based frontend application that utilizes LawGPT to provide legal guidance and information. This application aims to simplify legal research and provide users with legal insights on various topics.
 
@@ -23,11 +24,9 @@ You can access the live demo of the Niyamshayak frontend at [https://niyamsahaya
 
 ## Screenshots
 
-![Screenshot 1](placeholder_screenshot_1.png)
-*Caption for Screenshot 1*
+![image](https://github.com/Reuben-Stephen-John/lawgpt-frontend/assets/91174896/14d1d6ac-05c9-4eac-b4e0-9dce29148d9d)
 
-![Screenshot 2](placeholder_screenshot_2.png)
-*Caption for Screenshot 2*
+![image](https://github.com/Reuben-Stephen-John/lawgpt-frontend/assets/91174896/8eb8a28a-023c-4bed-84ac-ad0271f87f9f)
 
 ## Getting Started
 
